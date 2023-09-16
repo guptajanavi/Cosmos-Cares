@@ -97,11 +97,31 @@
             opacity: 1; /* Show the overlay on hover */
         }
 
+        /* Positioning for back link to take you to home page */
+        .back-link {
+            position: absolute;
+            top: 2px;
+            right: 10px;
+            font-size: 17px;
+        }
+
+        /* Styling for back link to take you to home page */
+        .back-link a {
+            color: white; /* Change the text color to white */
+            text-decoration: none; /* Remove underline from the link */
+        }
+    </style>
+
     </style>
 </head>
 
 <body>
     <div id="overlay-text"> 👨🚀 encouraging astronauts 👩🚀 </div>
+
+    <!-- Back link to take you to home page -->
+    <div class="back-link">
+        <p><a href="https://guptajanavi.github.io/HackCMU/">Back to the International Space Station</a></p>
+    </div>
 
     <div class="btn-group">
         <!-- Image 1 -->
@@ -133,11 +153,6 @@
         <button type="button" onclick="alert('In the vastness of space, every star has its own brilliance. You too possess a radiant light that makes you extraordinary.')"> 
             <img src="assets/a6.png"/>
         </button>
-    </div>
-
-    <!-- Back link to take you to home page -->
-    <div class="back-link">
-        <p><a href="https://guptajanavi.github.io/HackCMU/">Back to the International Space Station</a></p>
     </div>
 
 </body>
