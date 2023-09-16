@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <!-- Displays text and characters properly regardless of the language or symbol set used and ensures that it is viewable on a mobile device-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Journal</title>
-
+    <title>Custom Text Editor with Notes</title>
     <!-- Include Quill.js -->
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-    
     <style>
-        
         /* Background image styling */
-        body {
-            background-image: url('https://cdn.wccftech.com/wp-content/uploads/2016/09/spacee-1030x644.jpg'); 
-            background-size: cover; /* This scales the image to cover the entire viewport */
-            background-repeat: no-repeat; 
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            background-image: url('https://cdn.wccftech.com/wp-content/uploads/2016/09/spacee-1030x644.jpg'); /* Replace 'your-background-image.jpg' with your image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
-        /* Style the editor container */
+        /* Styling for the overlay text */
+        #overlay-text {
+            text-align: center;
+            font-size: 36px; /* Adjust the font size as needed */
+            color: white; /* Text color */
+            margin-top: 20px; /* Add top margin for spacing */
+        }
+
+        /* Create a container for the editor and notes */
+        #content-container {
+            display: flex;
+            justify-content: space-between; /* Arrange editor and notes side by side */
+            margin-top: 20px; /* Add top margin for spacing */
+        }
+
+        /* Styling for the editor container */
         #editor-container {
-            width: 50vw; /* Half of the viewport width */
-            height: 50vh; /* Half of the viewport height */
-            transform: translate(-50%, -50%)
-            position: relative; /* Relative positioning for overlay text */
+            width: 50%; /* Take up 50% of the available space */
             background-color: white; /* Editor background color */
+            padding: 10px; /* Add padding for spacing */
         }
 
         /* Styling for the toolbar */
@@ -34,29 +45,51 @@
             background-color: white; /* Toolbar background color */
         }
 
-        /* Styling for the overlay text */
-        #overlay-text {
-            position: absolute;
-            top: 50%; /* Center vertically */
-            left: 50%; /* Center horizontally */
-            transform: translate(-50%, -50%); /* Center the text exactly */
-            font-size: 36px; /* Adjust the font size as needed */
-            color: white; /* Text color */
+        /* Styling for the save button */
+        #save-button {
+            margin-top: 10px; /* Add top margin for spacing */
+            padding: 5px 10px; /* Adjust padding as needed */
+            background-color: #007bff; /* Button background color */
+            color: white; /* Button text color */
+            border: none; /* Remove button border */
+            cursor: pointer;
+        }
+
+        /* Styling for the notes container */
+        #notes-container {
+            width: 50%; /* Take up 50% of the available space */
+            background-color: rgba(255, 255, 255, 0.8); /* Notes container background color with transparency */
+            padding: 10px; /* Add padding for spacing */
+        }
+
+        /* Styling for individual notes */
+        .note {
+            margin-bottom: 5px; /* Add space between individual notes */
         }
     </style>
 </head>
 <body>
-    <!-- Create a container for the text editor -->
-    <div id="editor-container">
-        <div id="editor"></div>
-        <!-- Overlay text -->
-        <div id="overlay-text">Launch your thoughts to the moon</div>
+    <!-- Overlay text -->
+    <div id="overlay-text">Launch your thoughts to the moon</div>
+
+    <!-- Create a container for the editor and notes -->
+    <div id="content-container">
+        <!-- Create the Quill editor -->
+        <div id="editor-container">
+            <div id="editor"></div>
+            <!-- Save button -->
+            <button id="save-button">Save Note</button>
+        </div>
+        <!-- Create the notes container -->
+        <div id="notes-container">
+            <h2>Notes:</h2>
+            <div id="saved-notes"></div>
+        </div>
     </div>
 
     <!-- Include Quill.js script -->
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
-    <!-- Initialize Quill -->
     <script>
         var Font = Quill.import('formats/font'); // Import the Font format
         
@@ -64,15 +97,31 @@
             theme: 'snow', // 'snow' is a simple theme with basic formatting options
             modules: {
                 toolbar: [
-                    [{ 'font': ['Arial', 'Times New Roman', 'Courier New'] }], // Add font options
+                    [{ 'font': ['Arial', 'Times New Roman', 'Courier New'] }],
                     [{ 'size': ['small', false, 'large', 'huge'] }],
                     ['bold', 'italic'],
                     [{ 'color': [] }],
                     [{ 'list': 'bullet' }],
                 ],
             },
-            formats: ['font', 'size', 'bold', 'italic', 'color', 'list'], // Include the custom formats
+            formats: ['font', 'size', 'bold', 'italic', 'color', 'list'],
         });
+
+        // Save button click event
+        document.getElementById('save-button').addEventListener('click', function () {
+            var content = quill.root.innerHTML; // Get the content from the Quill editor
+            saveNote(content); // Save the note
+            quill.root.innerHTML = ''; // Clear the editor content
+        });
+
+        // Function to save a note
+        function saveNote(content) {
+            var notesContainer = document.getElementById('saved-notes');
+            var noteElement = document.createElement('div');
+            noteElement.className = 'note';
+            noteElement.innerHTML = content;
+            notesContainer.appendChild(noteElement);
+        }
     </script>
 </body>
 </html>
