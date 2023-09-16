@@ -1,83 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your HTML Page with YouTube and Spotify</title>
-    <style>
-        /* Background image styling */
-        body, html {
-            height: 100%;
-            margin: 0;
-            background-image: url('https://images.unsplash.com/photo-1610296669228-602fa827fc1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bmVidWxhfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'); /* Replace 'your-background-image.jpg' with your image URL */
-            background-size: cover;
-            background-repeat: repeat;
-        }
+    <head>
 
-        /* Styling for the overlay text */
-        #overlay-text {
-            text-align: center;
-            font-size: 40px;
-            color: white; 
-            margin-top: 20px; 
-        }
+        <!--Ensures that the characters work regardless of what symbols or language is used and it loads appropriately sized on all devices-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .video-container {
-            text-align: center; /* Center-align the video within its container */
-            display: inline-block;
-            vertical-align: top; /* Align the video and Spotify links vertically */
-            padding: 20px 20px 0 40px; /* Add padding around the video (20px at the top) */
-        }
-
-        .spotify-links {
-            text-align: centre; /* Left-align the Spotify links */
-            display: inline-block;
-            vertical-align: centre; /* Align the Spotify links with the video */
-            margin-left: 170px; /* Add margin to separate the video and Spotify links */
-        }
+        <title> Meditation </title>
         
-        .spotify-links iframe {
-            width: 300px; /* Adjust the width of the Spotify players */
-            height: 200px; /* Adjust the height of the Spotify players */
-            margin-bottom: 60px; /* Add margin to separate the Spotify links */
-        }
+        <style>
+            /* Background image styling */
+            body, html {
+                height: 100%;
+                margin: 0;
+                background-image: url('https://images.unsplash.com/photo-1610296669228-602fa827fc1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bmVidWxhfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'); /* Replace 'your-background-image.jpg' with your image URL */
+                background-size: cover;
+                background-repeat: repeat;
+            }
 
-        .back-link {
-            position: absolute;
-            top: 2px;
-            right: 10px;
-            font-size: 17px;
-        }
+            /* Styling for the overlay text */
+            #overlay-text {
+                text-align: center;
+                font-size: 40px;
+                color: white; 
+                margin-top: 20px; 
+            }
 
-        .back-link a {
-            color: white; /* Change the text color to white */
-            text-decoration: none; /* Remove underline from the link */
-        }
-    </style>
-</head>
-<body>
-    <!-- Overlay text -->
-    <div id="overlay-text">🥰keep calm and reach for the stars🥰 </div>
-    </div>
+            /* Styling for the frame containing the video*/
+            .video-container {
+                text-align: center; 
+                display: inline-block;
+                vertical-align: top; /* Align the video and Spotify links vertically */
+                padding: 20px 20px 0 40px; 
+            }
 
-    <div class="video-container">
-        <iframe width="580" height="360" src="https://www.youtube.com/embed/iaQed_Xdyvw?si=PcJ6yxz4d0bxTUYR" frameborder="0" allowfullscreen></iframe>
-        <iframe width="580" height="360" src="https://www.youtube.com/embed/PgBNRe916p8?si=0tyGi_uQUs7nR04W" frameborder="0" allowfullscreen></iframe>
-    </div>
+            /* Styling for the frame containing the spotify */
+            .spotify-links {
+                text-align: centre; /* Left-align the Spotify links */
+                display: inline-block;
+                vertical-align: centre; /* Align the Spotify links with the video */
+                margin-left: 170px; /* Add margin to separate the video and Spotify links */
+            }
+            
+            /* Styling for the frame containing the individual spotify links*/
+            .spotify-links iframe {
+                width: 300px; /* Adjust the width of the Spotify players */
+                height: 200px; /* Adjust the height of the Spotify players */
+                margin-bottom: 60px; /* Add margin to separate the Spotify links */
+            }
 
-    <div class="spotify-links">
-        <!-- Spotify Link 1 -->
-        <iframe src="https://open.spotify.com/embed/track/0ScIojb6Imo343SGP7yEQa?utm_source=generator" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            /* Positioning for back link to take you to home page */
+            .back-link {
+                position: absolute;
+                top: 2px;
+                right: 10px;
+                font-size: 17px;
+            }
+
+            /* Styling for back link to take you to home page */
+            .back-link a {
+                color: white; /* Change the text color to white */
+                text-decoration: none; /* Remove underline from the link */
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Overlay text -->
+        <div id="overlay-text">🥰keep calm and reach for the stars🥰 </div>
+        </div>
+
+        <div class="video-container">
+            <iframe width="580" height="360" src="https://www.youtube.com/embed/iaQed_Xdyvw?si=PcJ6yxz4d0bxTUYR" frameborder="0" allowfullscreen></iframe>
+            <iframe width="580" height="360" src="https://www.youtube.com/embed/PgBNRe916p8?si=0tyGi_uQUs7nR04W" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="spotify-links">
+            <!-- Spotify Link 1 -->
+            <iframe src="https://open.spotify.com/embed/track/0ScIojb6Imo343SGP7yEQa?utm_source=generator" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            
+            <!-- Spotify Link 2 -->
+            <iframe src="https://open.spotify.com/embed/track/3pZt1uUb7bgSADqm3smoMo?utm_source=generator" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            
+            <!-- Spotify Link 3 -->
+            <iframe src="https://open.spotify.com/embed/track/7dZZosZeF6KE3dS2trkUal?utm_source=generator" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
         
-        <!-- Spotify Link 2 -->
-        <iframe src="https://open.spotify.com/embed/track/3pZt1uUb7bgSADqm3smoMo?utm_source=generator" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        
-        <!-- Spotify Link 3 -->
-        <iframe src="https://open.spotify.com/embed/track/7dZZosZeF6KE3dS2trkUal?utm_source=generator" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-    </div>
-
-    <div class="back-link">
-        <p><a href="https://guptajanavi.github.io/HackCMU/">Back to the International Space Station</a></p>
-    </div>
-</body>
+        <!-- Back link to take you to home page -->
+        <div class="back-link">
+            <p><a href="https://guptajanavi.github.io/HackCMU/">Back to the International Space Station</a></p>
+        </div>
+    </body>
 </html>
