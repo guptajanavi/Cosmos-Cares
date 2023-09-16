@@ -21,41 +21,36 @@
         }
     </style>
 
-     /* Styling for the overlay text */
-        #overlay-text {
-            position: relative;
-            top: 50%; /* Center vertically */
-            left: 50%; /* Center horizontally */
-            font-size: 36px; /* Adjust the font size as needed */
-            color: white; /* Text color */
-        }
-
-        /* Styling for the editor container */
+        /* Style the editor container */
         #editor-container {
             width: 50vw; /* Half of the viewport width */
             height: 50vh; /* Half of the viewport height */
-            position: relative;
+            position: relative; /* Relative positioning for overlay text */
             background-color: white; /* Editor background color */
-            margin-top: 10px; /* Add margin to separate the editor from the text */
         }
 
         /* Styling for the toolbar */
         .ql-toolbar {
             background-color: white; /* Toolbar background color */
         }
+
+        /* Styling for the overlay text */
+        #overlay-text {
+            position: absolute;
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Center the text exactly */
+            font-size: 36px; /* Adjust the font size as needed */
+            color: white; /* Text color */
+        }
     </style>
 </head>
 <body>
-    <!-- Create a container for the overlay text -->
-    <div id="overlay-container">
+    <!-- Create a container for the text editor -->
+    <div id="editor-container">
+        <div id="editor"></div>
         <!-- Overlay text -->
         <div id="overlay-text">Launch your thoughts to the moon</div>
-    </div>
-
-    <!-- Create a container for the editor -->
-    <div id="editor-container">
-        <!-- Create the Quill editor -->
-        <div id="editor"></div>
     </div>
 
     <!-- Include Quill.js script -->
