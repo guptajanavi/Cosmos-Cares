@@ -29,11 +29,12 @@
             display: flex;
             justify-content: space-between; /* Arrange editor and notes side by side */
             margin: 20px; /* Add margin for spacing */
-            border: none;
+            border: none !important;
         }
 
         /* Styling for the editor container */
         #editor-container {
+            width: 50%;
             background-color: rgba(255, 255, 255, 0.8); /* Editor background color */
             padding: 20px; /* Add padding for spacing */
             border: none;
@@ -47,7 +48,7 @@
         /* Styling for the toolbar */
         .ql-toolbar {
             background-color: rgba(255, 255, 255, 0.8); /* Toolbar background color */
-            border: none;
+            border: none !important;
         }
 
         /* Styling for the save button */
@@ -65,11 +66,12 @@
 
         /* Styling for the notes container */
         #notes-container {
-            flex: 1; /* Take up available space */
+            width: 50%;
+            flex: 0; /* Take up available space */
             background-color: rgba(255, 255, 255, 0.8); /* Notes container background color with transparency */
             padding: 20px; /* Add padding for spacing */
             margin-left: 20px; /* Add left margin for spacing between editor and notes */
-            border: none;
+            border: none !important;
         }
 
         /* Styling for individual notes */
@@ -82,7 +84,7 @@
 </head>
 <body>
     <!-- Overlay text -->
-    <div id="overlay-text">🚀⭐ launch your thoughts to the moon 🌌☄️ </div>
+    <div id="overlay-text">🚀⭐ launch your thoughts to the moons 🌌☄️ </div>
 
     <!-- Create a container for the editor and notes -->
     <div id="content-container">
