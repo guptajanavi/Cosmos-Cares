@@ -30,14 +30,14 @@
         #content-container {
             display: flex;
             justify-content: space-between; /* Arrange editor and notes side by side */
-            margin-top: 20px; /* Add top margin for spacing */
+            margin: 20px; /* Add margin for spacing */
         }
 
         /* Styling for the editor container */
         #editor-container {
-            width: 50%; /* Take up 50% of the available space */
+            flex: 1; /* Take up available space */
             background-color: white; /* Editor background color */
-            padding: 10px; /* Add padding for spacing */
+            padding: 20px; /* Add padding for spacing */
         }
 
         /* Styling for the toolbar */
@@ -47,24 +47,29 @@
 
         /* Styling for the save button */
         #save-button {
-            margin-top: 10px; /* Add top margin for spacing */
-            padding: 5px 10px; /* Adjust padding as needed */
-            background-color: #007bff; /* Button background color */
-            color: white; /* Button text color */
+            margin-top: 20px; /* Add top margin for spacing */
+            padding: 10px 20px; /* Adjust padding as needed */
+            background-color: white; /* Button background color */
+            color: black; /* Button text color */
             border: none; /* Remove button border */
             cursor: pointer;
+            display: block; /* Make it a block-level element for centering */
+            margin-left: auto; /* Auto margin to center horizontally */
         }
 
         /* Styling for the notes container */
         #notes-container {
-            width: 50%; /* Take up 50% of the available space */
+            flex: 1; /* Take up available space */
             background-color: rgba(255, 255, 255, 0.8); /* Notes container background color with transparency */
-            padding: 10px; /* Add padding for spacing */
+            padding: 20px; /* Add padding for spacing */
+            margin-left: 20px; /* Add left margin for spacing between editor and notes */
         }
 
         /* Styling for individual notes */
         .note {
-            margin-bottom: 5px; /* Add space between individual notes */
+            margin-bottom: 10px; /* Add space between individual notes */
+            border-bottom: 1px solid #ccc; /* Add a border line between notes */
+            padding-bottom: 10px; /* Add spacing below the notes */
         }
     </style>
 </head>
