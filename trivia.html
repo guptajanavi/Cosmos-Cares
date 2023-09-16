@@ -1,180 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trivia</title>
-    <style>
-         /* Background image styling */
-         body, html {
-            height: 100%;
-            margin: 0;
-            background-image: url('https://cdn.wccftech.com/wp-content/uploads/2016/09/spacee-1030x644.jpg'); /* Replace 'your-background-image.jpg' with your image URL */
-            background-size: cover;
-            background-repeat: repeat;
-        }
+    <head>
 
-        /* Styling for the overlay text */
-        #overlay-text {
-            text-align: center;
-            font-size: 40px;
-            color: white; 
-            margin-top: 20px; 
-        }
+        <!--Ensures that the characters work regardless of what symbols or language is used and it loads appropriately sized on all devices-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .image-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 1px;
-        }
+        <title>Trivia</title>
 
-        .image {
-            width: 300px;
-            height: 300px;
-            margin: 10px;
-            position: relative;
-            cursor: pointer;
-        }
+        <style>
+            /* Background image styling */
+            body, html {
+                height: 100%;
+                margin: 0;
+                background-image: url('https://cdn.wccftech.com/wp-content/uploads/2016/09/spacee-1030x644.jpg'); /* Replace 'your-background-image.jpg' with your image URL */
+                background-size: cover;
+                background-repeat: repeat;
+            }
 
-        .fact-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5); /*Semi-transparent background for facts */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
+            /* Styling for the overlay text */
+            #overlay-text {
+                text-align: center;
+                font-size: 40px;
+                color: white; 
+                margin-top: 20px; 
+            }
 
-        .image:hover .fact-overlay {
-            opacity: 1; /* Show the overlay on hover */
-        }
+            /* Styling for frame that contains all images */
+            .image-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 1px;
+            }
 
-        .fact-text {
-            color: white;
-            font-size: 18px;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <div id="overlay-text">🍫🌍 mars bars for a hungry mind 🌍🍫</div>
-    </div>
+            /* Styling for all the images */
+            .image {
+                width: 300px;
+                height: 300px;
+                margin: 10px;
+                position: relative;
+                cursor: pointer;
+            }
+            
+            /* Styling for background on images when hovering */
+            .fact-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5); /*Semi-transparent background for facts */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
 
-    <div class="image-container">
-        <!-- Image 1 -->
-        <div class="image">
-            <img src="assets/spaceship (1).png" alt="Alien">
-            <div class="fact-overlay">
-                <p class="fact-text"></p>
+            .image:hover .fact-overlay {
+                opacity: 1; /* Show the overlay on hover */
+            }
+
+            /* Styling for facts on image overlay */
+            .fact-text {
+                color: white;
+                font-size: 18px;
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Overlay text -->
+        <div id="overlay-text">🍫🌍 mars bars for a hungry mind 🌍🍫</div>
+        </div>
+
+        <div class="image-container">
+            <!-- Image 1 -->
+            <div class="image">
+                <img src="assets/spaceship (1).png" alt="Alien">
+                <div class="fact-overlay">
+                    <p class="fact-text"></p>
+                </div>
+            </div>
+
+            <!-- Image 2 -->
+            <div class="image">
+                <img src="assets/astronaut (1).png" alt="Astronaut">
+                <div class="fact-overlay">
+                    <p class="fact-text"></p>
+                </div>
+            </div>
+            
+            <!-- Image 3 -->
+            <div class="image">
+                <img src="assets/constellations (1).png" alt="Constellations">
+                <div class="fact-overlay">
+                    <p class="fact-text"></p>
+                </div>
+            </div>
+
+            <!-- Image 4 -->
+            <div class="image">
+                <img src="assets/galaxy (1).png" alt="Galaxy">
+                <div class="fact-overlay">
+                    <p class="fact-text"></p>
+                </div>
+            </div>
+
+            <!-- Image 5 -->
+            <div class="image">
+                <img src="assets/planet_trivia (2).png" alt="Planet">
+                <div class="fact-overlay">
+                    <p class="fact-text"></p>
+                </div>
+            </div>
+
+            <!-- Image 6 -->
+            <div class="image">
+                <img src="assets/rocket (1).png" alt="Rocket">
+                <div class="fact-overlay">
+                    <p class="fact-text"></p>
+                </div>
             </div>
         </div>
 
-        <!-- Image 2 -->
-        <div class="image">
-            <img src="assets/astronaut (1).png" alt="Astronaut">
-            <div class="fact-overlay">
-                <p class="fact-text"></p>
-            </div>
-        </div>
-        
-        <!-- Image 3 -->
-        <div class="image">
-            <img src="assets/constellations (1).png" alt="Constellations">
-            <div class="fact-overlay">
-                <p class="fact-text"></p>
-            </div>
-        </div>
+        <script>
+            /* Arrays of facts for each image: This is a list of lists*/
+            const facts = [
+                [   
+                    "Despite numerous claims and sightings, there is no concrete scientific evidence to confirm the existence of extraterrestrial life or aliens.",
+                    "Scientists use the Drake Equation to estimate the potential number of advanced civilizations in our galaxy capable of communicating with us. It takes into account various factors such as the rate of star formation and the likelihood of planets with life-supporting conditions.",
+                    "Named after physicist Enrico Fermi, the Fermi Paradox raises the question of why, given the vast number of stars and potentially habitable planets in the universe, we have not yet detected any signs of intelligent extraterrestrial life.",
+                    "The Roswell UFO incident in 1947 is one of the most famous alleged UFO crashes. The U.S. military initially reported the recovery of a flying disc but later said it was a weather balloon.",
+                    "In 1977, a radio telescope received a strong, unexplained signal from space lasting 72 seconds. It was nicknamed the Wow! signal and remains a mystery to this day.",
+                    "Alien abduction stories involve claims of people being taken against their will by extraterrestrial beings for various purposes, including experimentation and communication. These claims are widely debated and often considered part of popular culture."
+                ],
+                [
+                    "Yuri Gagarin, a Soviet cosmonaut, was the first human to travel into space. He orbited the Earth aboard Vostok 1 on April 12, 1961.",
+                    "Alan Shepard became the first American in space on May 5, 1961, when he piloted the Freedom 7 spacecraft on a suborbital flight.",
+                    "Twelve astronauts have walked on the Moon between 1969 and 1972 during NASA's Apollo missions. Neil Armstrong and Buzz Aldrin were the first, with Armstrong being the first to set foot on the lunar surface.",
+                    "The International Space Station (ISS) is a collaborative effort involving space agencies from multiple countries, including NASA (United States), Roscosmos (Russia), ESA (European Space Agency), JAXA (Japan Aerospace Exploration Agency), and CSA (Canadian Space Agency).",
+                    "The first woman in space was Valentina Tereshkova, a Soviet cosmonaut, who orbited Earth on June 16, 1963. The first American woman in space was Sally Ride, who flew on the Space Shuttle Challenger in 1983.",
+                    "Russian astronaut Gherman Titov holds the record for being the youngest person to travel to space. He was just 25 years old when he orbited the Earth in 1961.",
+                ],
+                [
+                    "There are 12 zodiac constellations, which are used in astrology to create horoscopes. These constellations lie along the ecliptic, the apparent path of the Sun across the sky.",
+                    "The Big Dipper is one of the most recognizable constellations in the Northern Hemisphere. It's part of Ursa Major (the Great Bear). The Little Dipper is part of Ursa Minor (the Little Bear) and includes the North Star (Polaris), which is used for navigation.",
+                    "In the Southern Hemisphere, the Southern Cross (Crux) is a prominent constellation used for navigation. It's located near the South Celestial Pole.",
+                    "Constellations aren't fixed in the night sky. Over millennia, the positions of stars change due to Earth's precession, so the constellations we see today are different from those observed by ancient civilizations.",
+                    "Stars come in various sizes, colors, and stages of development. These include red dwarfs, yellow dwarfs (like our Sun), giant stars, and supergiants.",
+                    "Extremely massive stars can end their lives as neutron stars or even collapse further to become black holes, both of which have extremely dense and intense gravitational fields."
+                ],
+                [
+                    "The Andromeda Galaxy (M31) is the nearest spiral galaxy to the Milky Way and is on a collision course with our galaxy. In about 4.5 billion years, the two galaxies are expected to merge.",
+                    "Dwarf galaxies are smaller and less massive than the Milky Way and other large galaxies. They are quite numerous and often orbit larger galaxies as satellites.",
+                    "Some of the most energetic and distant objects in the universe are quasars. They are believed to be powered by supermassive black holes at the centers of galaxies.",
+                    "The Hubble Space Telescope's deep field observations revealed thousands of galaxies in a small, seemingly empty patch of the sky. This image demonstrated the vastness of the universe.",
+                    "The exact process of galaxy formation is still an area of active research, but it is thought to involve the collapse of gas and the accumulation of dark matter over billions of years.",
+                    "The colors of galaxies are determined by the types of stars they contain and the presence of interstellar dust. Young, active galaxies often appear blue due to the abundance of hot, massive stars.",
+                ],
+                [
+                    "Mercury is the smallest planet, while Jupiter is the largest. In fact, Jupiter is more massive than all the other planets, asteroids, and comets in the solar system combined.",
+                    "The inner planets (Mercury, Venus, Earth, and Mars) are called terrestrial planets and are characterized by solid, rocky surfaces. The outer planets (Jupiter, Saturn, Uranus, and Neptune) are gas giants, composed mostly of gases like hydrogen and helium.",
+                    "Venus has a thick, toxic atmosphere and is the hottest planet in our solar system due to its extreme greenhouse effect, even hotter than Mercury.",
+                    "Pluto was classified as the ninth planet until 2006 when it was reclassified as a dwarf planet by the International Astronomical Union (IAU). Other dwarf planets in our solar system include Eris, Haumea, Makemake, and Ceres.",
+                    "Numerous space missions have been launched to study planets, including the Mars rovers (e.g., Curiosity and Perseverance), the Voyager probes, and the New Horizons mission to Pluto and the Kuiper Belt.",
+                    "Planets form from the disk of gas and dust surrounding young stars. This process involves accretion and gravitational interactions over millions of years.",
+                ],
+                [
+                    "The ISS is a joint project involving multiple space agencies, including NASA (United States), Roscosmos (Russia), ESA (European Space Agency), JAXA (Japan Aerospace Exploration Agency), and CSA (Canadian Space Agency). It has been continuously inhabited since November 2000.",
+                    "NASA's Voyager 1 and Voyager 2 spacecraft were launched in 1977 and have since traveled beyond the solar system into interstellar space. They carry golden records with sounds and images representing Earth's culture and life.",
+                    "NASA's Space Shuttle program operated from 1981 to 2011, with the shuttles Columbia, Challenger, Discovery, Atlantis, and Endeavour. They were used for a wide range of missions, including deploying and repairing satellites and constructing the ISS.",
+                    "The James Webb Space Telescope (JWST), set to launch in the near future, will be the successor to the Hubble Space Telescope and is designed to observe the universe in the infrared spectrum, providing new insights into the cosmos.",
+                    "Private companies like SpaceX, Blue Origin, and others are playing an increasingly significant role in space exploration and transportation, with missions to the ISS, lunar plans, and the development of reusable rockets.",
+                    "NASA's New Horizons mission conducted a historic flyby of Pluto in 2015, providing our first close-up images and data of the distant dwarf planet.",
+                ]
+            ];
 
-        <!-- Image 4 -->
-        <div class="image">
-            <img src="assets/galaxy (1).png" alt="Galaxy">
-            <div class="fact-overlay">
-                <p class="fact-text"></p>
-            </div>
-        </div>
+            /* Function to generate a random fact from the list of facts for each image */
+            function getRandomFact(imageIndex) {
+                const factArray = facts[imageIndex];
+                const randomIndex = Math.floor(Math.random() * factArray.length);
+                return factArray[randomIndex];
+            }
 
-        <!-- Image 5 -->
-        <div class="image">
-            <img src="assets/planet_trivia (2).png" alt="Planet">
-            <div class="fact-overlay">
-                <p class="fact-text"></p>
-            </div>
-        </div>
+            /* Get all image elements with class "image"*/
+            const images = document.querySelectorAll('.image');
 
-        <!-- Image 6 -->
-        <div class="image">
-            <img src="assets/rocket (1).png" alt="Rocket">
-            <div class="fact-overlay">
-                <p class="fact-text"></p>
-            </div>
-        </div>
-    </div>
+            /*  Add event listeners to each image for hovering */
+            images.forEach((image, index) => {
+                const factOverlay = image.querySelector('.fact-overlay');
+                const factText = factOverlay.querySelector('.fact-text');
 
-<script>
-    // Arrays of facts for each image
-    const facts = [
-        ["Despite numerous claims and sightings, there is no concrete scientific evidence to confirm the existence of extraterrestrial life or aliens.",
-         "Scientists use the Drake Equation to estimate the potential number of advanced civilizations in our galaxy capable of communicating with us. It takes into account various factors such as the rate of star formation and the likelihood of planets with life-supporting conditions.",
-        "Named after physicist Enrico Fermi, the Fermi Paradox raises the question of why, given the vast number of stars and potentially habitable planets in the universe, we have not yet detected any signs of intelligent extraterrestrial life.",
-    "The Roswell UFO incident in 1947 is one of the most famous alleged UFO crashes. The U.S. military initially reported the recovery of a flying disc but later said it was a weather balloon.",
-    "In 1977, a radio telescope received a strong, unexplained signal from space lasting 72 seconds. It was nicknamed the Wow! signal and remains a mystery to this day.",
-    " Alien abduction stories involve claims of people being taken against their will by extraterrestrial beings for various purposes, including experimentation and communication. These claims are widely debated and often considered part of popular culture."
-    ],
-        ["Yuri Gagarin, a Soviet cosmonaut, was the first human to travel into space. He orbited the Earth aboard Vostok 1 on April 12, 1961.",
-         "Alan Shepard became the first American in space on May 5, 1961, when he piloted the Freedom 7 spacecraft on a suborbital flight.",
-        "Twelve astronauts have walked on the Moon between 1969 and 1972 during NASA's Apollo missions. Neil Armstrong and Buzz Aldrin were the first, with Armstrong being the first to set foot on the lunar surface.",
-        "The International Space Station (ISS) is a collaborative effort involving space agencies from multiple countries, including NASA (United States), Roscosmos (Russia), ESA (European Space Agency), JAXA (Japan Aerospace Exploration Agency), and CSA (Canadian Space Agency).",
-        "The first woman in space was Valentina Tereshkova, a Soviet cosmonaut, who orbited Earth on June 16, 1963. The first American woman in space was Sally Ride, who flew on the Space Shuttle Challenger in 1983.",
-        "Russian astronaut Gherman Titov holds the record for being the youngest person to travel to space. He was just 25 years old when he orbited the Earth in 1961.",
-        ],
-        ["There are 12 zodiac constellations, which are used in astrology to create horoscopes. These constellations lie along the ecliptic, the apparent path of the Sun across the sky.",
-        "The Big Dipper is one of the most recognizable constellations in the Northern Hemisphere. It's part of Ursa Major (the Great Bear). The Little Dipper is part of Ursa Minor (the Little Bear) and includes the North Star (Polaris), which is used for navigation.",
-        "In the Southern Hemisphere, the Southern Cross (Crux) is a prominent constellation used for navigation. It's located near the South Celestial Pole.",
-        "Constellations aren't fixed in the night sky. Over millennia, the positions of stars change due to Earth's precession, so the constellations we see today are different from those observed by ancient civilizations.",
-        "Stars come in various sizes, colors, and stages of development. These include red dwarfs, yellow dwarfs (like our Sun), giant stars, and supergiants.",
-        "Extremely massive stars can end their lives as neutron stars or even collapse further to become black holes, both of which have extremely dense and intense gravitational fields."],
-        // Add more facts arrays for each image as needed
-    ];
+                /* Function to update the displayed fact */
+                function updateFact() {
+                    factText.textContent = getRandomFact(index);
+                }
 
-    // Function to generate a random fact for a specific image
-    function getRandomFact(imageIndex) {
-        const factArray = facts[imageIndex];
-        const randomIndex = Math.floor(Math.random() * factArray.length);
-        return factArray[randomIndex];
-    }
+                /* Set initial fact */
+                updateFact();
 
-    // Get all image elements with class "image"
-    const images = document.querySelectorAll('.image');
+                /* Event listener for mouseover (hover) */
+                image.addEventListener('mouseover', () => {
+                    updateFact();
+                });
 
-    // Add event listeners to each image for hovering
-    images.forEach((image, index) => {
-        const factOverlay = image.querySelector('.fact-overlay');
-        const factText = factOverlay.querySelector('.fact-text');
-
-        // Function to update the displayed fact
-        function updateFact() {
-            factText.textContent = getRandomFact(index);
-        }
-
-        // Set initial fact
-        updateFact();
-
-        // Event listener for mouseover (hover)
-        image.addEventListener('mouseover', () => {
-            updateFact();
-        });
-
-        // Event listener for mouseout (hover out)
-        image.addEventListener('mouseout', () => {
-            updateFact();
-        });
-    });
-</script>
-</body>
+                /* Event listener for mouseout (hover out) */
+                image.addEventListener('mouseout', () => {
+                    updateFact();
+                });
+            });
+        </script>
+    </body>
 </html>
