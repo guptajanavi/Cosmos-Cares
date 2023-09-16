@@ -7,7 +7,7 @@ const hoursUnit = document.querySelector('.hours');// span element that displays
 const minutesUnit = document.querySelector('.minutes');// span element that displays the amount of minutes
 const secondsUnit = document.querySelector('.seconds');// span element that displays the amount of seconds
 
-const startDate = new Date(2017, 1, 19, 11, 30, 00).getTime();// initial date and time the countdown clock started from (Year, Month, Day, Hours, Minutes, Seconds,)
+const startDate = new Date(2017, 1, 19, 11, 30, 0o0).getTime();// initial date and time the countdown clock started from (Year, Month, Day, Hours, Minutes, Seconds,)
 startDate > Date.now() ? timer(startDate) : calculateFutureDate(startDate);// conditional statement that decides if the timer function should start with the start date or calculate another date
 // timer function takes in a date parameter in milliseconds
 function timer(date){
@@ -53,7 +53,7 @@ function timeLeft(time){
 // calculateFutureDate takes a number in milliseconds as a parameter 
 function calculateFutureDate (dateTochange){	
 		const newDate = new Date(dateTochange);// converts it to date format
-		const weeklyDate  = newDate.setDate(newDate.getDate() +07);// adds 7 days to that date
+		const weeklyDate  = newDate.setDate(newDate.getDate() +0o7);// adds 7 days to that date
 		timer(weeklyDate);// pass it to the timer function
 		//console.log("new: "+dateTochange);		
 }
