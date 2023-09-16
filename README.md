@@ -1,5 +1,6 @@
 # Cosmos Cares 
 An interactive space-themed website created for students to practice mindfulness by Natalie Sarabosing, Janavi Gupta and Avantika Gupta @ Carnegie Mellon University. Check out the website here: [https://guptajanavi.github.io/cosmos-cares]
+
 ![home](https://github.com/guptajanavi/cosmos-cares/assets/79553848/649d146c-ecbf-49d3-bcb0-f2f431c85e64)
 
 # Inspiration
@@ -25,7 +26,7 @@ The main page of our website is minimalistic and designed to allow you to explor
 ![affirmations](https://github.com/guptajanavi/cosmos-cares/assets/79553848/77748f6c-beb5-4956-a841-5be235fcc83f)
 
 # How We Built It
-We started off familiarising ourselves with Github to collaborate and Github Pages to generate and deploy the actual website. We mapped out the design of the website and discussed the actual content that we envisioned for each of the pages. In terms of implementation, we used a combination of HTML, CSS, and JavaScript! We used CSS to format graphics and texts and Javascript to embed other links and provide more dynamic functionality on the website. All of this was then embedded into HTML files and deployed using Github Pages.
+The website uses a combination of HTML, CSS, and JavaScript. We used CSS to format graphics and texts and Javascript to embed other links and provide more dynamic functionality on the website. All of this was then embedded into HTML files and deployed using Github Pages.
 
 # Challenges We Ran Into
 The primary challenge we ran into was that none of us had any experience with HTML, CSS, JavaScript, Github or Github Pages! We struggled with not knowing whether our ideas were easily implementable in these languages even before we started coding. We also had a steep learning curve while implementing these ideas because we had to self-learn quickly to create a tangible website. The short timespan of a hackathon added to these challenges.
