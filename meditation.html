@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meditation</title>
+    <title>Your HTML Page with YouTube and Spotify</title>
     <style>
         /* Background image styling */
         body, html {
@@ -14,21 +14,6 @@
             background-repeat: repeat;
         }
 
-        /* Create a container for the editor and notes */
-        #content-container {
-            display: flex;
-            justify-content: space-between; /* Arrange editor and notes side by side */
-            border: none;
-            padding: 20px
-        }
-
-        video-container {
-            text-align: center; /* Center-align the video within its container */
-            margin-left: 50px; /* Add a left margin to the video container */
-            margin-top: 50px; /* Align the video and images vertically */
-            padding: 20px; /* Add padding around the video */
-        }
-
         /* Styling for the overlay text */
         #overlay-text {
             text-align: center;
@@ -37,38 +22,45 @@
             margin-top: 20px; 
         }
 
+        .video-container {
+            text-align: center; /* Center-align the video within its container */
+            display: inline-block;
+            vertical-align: top; /* Align the video and Spotify links vertically */
+            padding: 20px 20px 0 20px; /* Add padding around the video (20px at the top) */
+        }
 
-        .spotify-container {
-            text-align: center; /* Center-align the Spotify players within their container */
-            margin-left: 650px; /* Add a left margin to the Spotify container */
-            margin-top: 40px; /* Align the Spotify players vertically */
-            padding: 20px; /* Add padding around the Spotify players */
+        .spotify-links {
+            text-align: left; /* Left-align the Spotify links */
+            display: inline-block;
+            vertical-align: top; /* Align the Spotify links with the video */
+            margin-left: 20px; /* Add margin to separate the video and Spotify links */
+        }
+        
+        .spotify-links iframe {
+            width: 300px; /* Adjust the width of the Spotify players */
+            height: 380px; /* Adjust the height of the Spotify players */
+            margin-bottom: 20px; /* Add margin to separate the Spotify links */
         }
     </style>
 </head>
 <body>
     <!-- Overlay text -->
     <div id="overlay-text">🥰keep calm and reach for the star🥰 </div>
-
-    <div id="content-container">
-        <div id="video-container">
-        <div id="spotify-container">
-        </div>
+    </div>
 
     <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/iaQed_Xdyvw?si=PcJ6yxz4d0bxTUYR" frameborder="10" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/iaQed_Xdyvw?si=PcJ6yxz4d0bxTUYR" frameborder="0" allowfullscreen></iframe>
     </div>
 
-        <div class="spotify-container">
-        <!-- Spotify Track 1 -->
-        <iframe src="https://open.spotify.com/embed/track/0ScIojb6Imo343SGP7yEQa?utm_source=generator" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    <div class="spotify-links">
+        <!-- Spotify Link 1 -->
+        <iframe src="https://open.spotify.com/embed/track/0ScIojb6Imo343SGP7yEQa?utm_source=generator" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         
-        <!-- Spotify Track 2 -->
-        <iframe src="https://open.spotify.com/embed/track/3pZt1uUb7bgSADqm3smoMo?utm_source=generator" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <!-- Spotify Link 2 -->
+        <iframe src="https://open.spotify.com/embed/track/3pZt1uUb7bgSADqm3smoMo?utm_source=generator" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         
-        <!-- Spotify Track 3 -->
-        <iframe src="https://open.spotify.com/embed/track/7dZZosZeF6KE3dS2trkUal?utm_source=generator" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <!-- Spotify Link 3 -->
+        <iframe src="https://open.spotify.com/embed/track/7dZZosZeF6KE3dS2trkUal?utm_source=generator" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     </div>
-
 </body>
 </html>
