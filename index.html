@@ -26,7 +26,7 @@
             width: 30px;
             height: 30px;
             margin: 10px;
-            margin-top: 1000px;
+            margin-top: 100px;
             margin-left: 300px;
             cursor: pointer;
         }
@@ -44,7 +44,7 @@
             width: 30px;
             height: 30px;
             margin: 10px;
-            margin-top: 800px;
+            margin-top: 400px;
             margin-left: 1500px;
             cursor: pointer;
         }
@@ -107,44 +107,7 @@
         </div>
     </div>
 
-        
-    </div>
 
-    <script>
-        // Arrays of facts for each image
-        const facts = [
-            ["Fact 1 for Image 1", "Fact 2 for Image 1"],
-            ["Fact 1 for Image 2", "Fact 2 for Image 2"],
-            // Add more facts arrays for each image as needed
-        ];
-
-        // Function to generate a random fact for a specific image
-        function getRandomFact(imageIndex) {
-            const factArray = facts[imageIndex];
-            return factArray[Math.floor(Math.random() * factArray.length)];
-        }
-
-        // Get all image elements with class "image"
-        const images = document.querySelectorAll('.image');
-
-        // Add event listeners to each image for hovering
-        images.forEach((image, index) => {
-            const factOverlay = image.querySelector('.fact-overlay');
-            const factText = factOverlay.querySelector('.fact-text');
-
-            // Set initial fact
-            factText.textContent = getRandomFact();
-
-            // Event listener for mouseover (hover)
-            image.addEventListener('mouseover', () => {
-                factText.textContent = getRandomFact();
-            });
-
-            // Event listener for mouseout (hover out)
-            image.addEventListener('mouseout', () => {
-                factText.textContent = getRandomFact();
-            });
-        });
     </script>
 </body>
 </html>
