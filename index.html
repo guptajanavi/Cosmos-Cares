@@ -1,1 +1,156 @@
-<h>Hello!</h>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Station</title>
+    <style>
+         /* Background image styling */
+         body, html {
+            height: 100%;
+            margin: 0;
+            background-image: "spaceship_inside.png"; /* Replace 'your-background-image.jpg' with your image URL */
+            background-size: cover;
+            background-repeat: repeat;
+        }
+
+        /* Styling for the overlay text */
+        #overlay-text {
+            text-align: center;
+            font-size: 40px;
+            color: white; 
+            margin-top: 20px; 
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .image {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .fact-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /*Semi-transparent background for facts */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .image:hover .fact-overlay {
+            opacity: 1; /* Show the overlay on hover */
+        }
+
+        .fact-text {
+            color: black;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="overlay-text"> welcome back to the space station! </div>
+    </div>
+
+    <div class="image-container">
+        <!-- Image 1 -->
+        <div class="image">
+            <img src="assets/vecteezy_ufo-spaceship-concept-clipart-design-illustration_9384534_666.png.png" alt="Alien">
+            <div class="fact-overlay">
+                <p class="fact-text"></p>
+            </div>
+        </div>
+
+        <!-- Image 2 -->
+        <div class="image">
+            <img src="assets/vecteezy_astronaut-png-graphic-clipart-design_20003935_396.png.jpg" alt="Astronaut">
+            <div class="fact-overlay">
+                <p class="fact-text"></p>
+            </div>
+        </div>
+        
+        <!-- Image 3 -->
+        <div class="image">
+            <img src="assets/vecteezy_zodiac-sign-with-watercolor_10829148_41.png.jpg" alt="Constellations">
+            <div class="fact-overlay">
+                <p class="fact-text"></p>
+            </div>
+        </div>
+
+        <!-- Image 4 -->
+        <div class="image">
+            <img src="assets/vecteezy_galaxy-paint-brush_24222739_169.png.jpg" alt="Galaxy">
+            <div class="fact-overlay">
+                <p class="fact-text"></p>
+            </div>
+        </div>
+
+        <!-- Image 5 -->
+        <div class="image">
+            <img src="assets/planet_trivia (1).png" alt="Planet">
+            <div class="fact-overlay">
+                <p class="fact-text"></p>
+            </div>
+        </div>
+
+        <!-- Image 6 -->
+        <div class="image">
+            <img src="assets/vecteezy_rocket-spaceship-clipart-design-illustration_9394204_301.png" alt="Rocket">
+            <div class="fact-overlay">
+                <p class="fact-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Arrays of facts for each image
+        const facts = [
+            ["Fact 1 for Image 1", "Fact 2 for Image 1"],
+            ["Fact 1 for Image 2", "Fact 2 for Image 2"],
+            // Add more facts arrays for each image as needed
+        ];
+
+        // Function to generate a random fact for a specific image
+        function getRandomFact(imageIndex) {
+            const factArray = facts[imageIndex];
+            return factArray[Math.floor(Math.random() * factArray.length)];
+        }
+
+        // Get all image elements with class "image"
+        const images = document.querySelectorAll('.image');
+
+        // Add event listeners to each image for hovering
+        images.forEach((image, index) => {
+            const factOverlay = image.querySelector('.fact-overlay');
+            const factText = factOverlay.querySelector('.fact-text');
+
+            // Set initial fact
+            factText.textContent = getRandomFact();
+
+            // Event listener for mouseover (hover)
+            image.addEventListener('mouseover', () => {
+                factText.textContent = getRandomFact();
+            });
+
+            // Event listener for mouseout (hover out)
+            image.addEventListener('mouseout', () => {
+                factText.textContent = getRandomFact();
+            });
+        });
+    </script>
+</body>
+</html>
