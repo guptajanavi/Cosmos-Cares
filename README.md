@@ -1,7 +1,6 @@
 # Cosmos Cares 
-Check out the website here: [https://guptajanavi.github.io/cosmos-cares]
+An interactive space-themed website created for students to practice mindfulness by Natalie Sarabosing, Janavi Gupta and Avantika Gupta @ Carnegie Mellon University. Check out the website here: [https://guptajanavi.github.io/cosmos-cares]
 ![home](https://github.com/guptajanavi/cosmos-cares/assets/79553848/649d146c-ecbf-49d3-bcb0-f2f431c85e64)
-An interactive space-themed website created for students to practice mindfulness by Natalie Sarabosing, Janavi Gupta and Avantika Gupta @ Carnegie Mellon University
 
 # Inspiration
 The inspiration for Cosmos Cares came from a desire to create a platform that promotes mindfulness and well-being among students, particularly by using a space-themed approach to make it engaging and calming. We wanted to provide a resource that not only helps students manage anxiety but also fosters a sense of wonder and curiosity about the cosmos.
