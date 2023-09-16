@@ -1,6 +1,6 @@
 # Cosmos Cares 
 An interactive space-themed website created for students to practice mindfulness\
-By Natalie Sarabosing, Janavi Gupta and Avantika Gupta @ Carnegie Mellon University\
+By Natalie Sarabosing, Janavi Gupta and Avantika Gupta @ Carnegie Mellon University
 
 
 
