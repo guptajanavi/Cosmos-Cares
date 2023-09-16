@@ -87,6 +87,18 @@
             padding-bottom: 10px; /* Add spacing below the notes */
             word-wrap: break-word ;
         }
+
+        .back-link {
+            position: absolute;
+            top: 2px;
+            right: 10px;
+            font-size: 17px;
+        }
+
+        .back-link a {
+            color: white; /* Change the text color to white */
+            text-decoration: none; /* Remove underline from the link */
+        }
     </style>
 </head>
 <body>
@@ -143,6 +155,10 @@
             noteElement.innerHTML = content;
             notesContainer.appendChild(noteElement);
         }
+
+        <div class="back-link">
+        <p><a href="https://guptajanavi.github.io/HackCMU/">Back to the International Space Station</a></p>
+    </div>
     </script>
 </body>
 </html>
