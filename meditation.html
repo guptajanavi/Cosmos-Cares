@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meditation</title>
-</head>
-<style>
+    <style>
         /* Background image styling */
         body, html {
             height: 100%;
@@ -15,10 +14,12 @@
             background-repeat: repeat;
         }
 
-    .video-container {
-            padding: 200px; /* Add padding around the video */
+        video-container {
             text-align: center; /* Center-align the video within its container */
-            margin-left: 100px; /* Add a left margin to the video container */
+            margin-left: 50px; /* Add a left margin to the video container */
+            display: inline-block;
+            vertical-align: top; /* Align the video and images vertically */
+            padding: 20px; /* Add padding around the video */
         }
 
         /* Styling for the overlay text */
@@ -28,14 +29,38 @@
             color: white; 
             margin-top: 20px; 
         }
-</style>
+
+
+        .spotify-container {
+            text-align: center; /* Center-align the Spotify players within their container */
+            margin-left: 50px; /* Add a left margin to the Spotify container */
+            display: inline-block;
+            vertical-align: top; /* Align the Spotify players vertically */
+            padding: 20px; /* Add padding around the Spotify players */
+        }
+    </style>
+</head>
 <body>
     <!-- Overlay text -->
     <div id="overlay-text">🥰keep calm and reach for the stars🥰 </div>
-    
-    <iframe width="800" height="400" padding="140" src="https://www.youtube.com/embed/iaQed_Xdyvw?si=PcJ6yxz4d0bxTUYR" title="YouTube video player" frameborder="10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
+
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/iaQed_Xdyvw?si=PcJ6yxz4d0bxTUYR" frameborder="10" allowfullscreen></iframe>
+    </div>
+
+        <div class="spotify-container">
+        <!-- Spotify Track 1 -->
+        <iframe src="https://open.spotify.com/embed/track/0ScIojb6Imo343SGP7yEQa?utm_source=generator" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <p class="caption">Caption for Spotify Track 1</p>
+        
+        <!-- Spotify Track 2 -->
+        <iframe src="https://open.spotify.com/embed/track/3pZt1uUb7bgSADqm3smoMo?utm_source=generator" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <p class="caption">Caption for Spotify Track 2</p>
+        
+        <!-- Spotify Track 3 -->
+        <iframe src="https://open.spotify.com/embed/track/7dZZosZeF6KE3dS2trkUal?utm_source=generator" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <p class="caption">Caption for Spotify Track 3</p>
+    </div>
+
 </body>
-
 </html>
-
-
