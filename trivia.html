@@ -116,41 +116,47 @@
         </div>
     </div>
 
-    <script>
-        // Arrays of facts for each image
-        const facts = [
-            ["Fact 1 for Image 1", "Fact 2 for Image 1"],
-            ["Fact 1 for Image 2", "Fact 2 for Image 2"],
-            // Add more facts arrays for each image as needed
-        ];
+<script>
+    // Arrays of facts for each image
+    const facts = [
+        ["Fact 1 for Image 1", "Fact 2 for Image 1"],
+        ["Fact 1 for Image 2", "Fact 2 for Image 2"],
+        // Add more facts arrays for each image as needed
+    ];
 
-        // Function to generate a random fact for a specific image
-        function getRandomFact(imageIndex) {
-            const factArray = facts[imageIndex];
-            return factArray[Math.floor(Math.random() * factArray.length)];
+    // Function to generate a random fact for a specific image
+    function getRandomFact(imageIndex) {
+        const factArray = facts[imageIndex];
+        const randomIndex = Math.floor(Math.random() * factArray.length);
+        return factArray[randomIndex];
+    }
+
+    // Get all image elements with class "image"
+    const images = document.querySelectorAll('.image');
+
+    // Add event listeners to each image for hovering
+    images.forEach((image, index) => {
+        const factOverlay = image.querySelector('.fact-overlay');
+        const factText = factOverlay.querySelector('.fact-text');
+
+        // Function to update the displayed fact
+        function updateFact() {
+            factText.textContent = getRandomFact(index);
         }
 
-        // Get all image elements with class "image"
-        const images = document.querySelectorAll('.image');
+        // Set initial fact
+        updateFact();
 
-        // Add event listeners to each image for hovering
-        images.forEach((image, index) => {
-            const factOverlay = image.querySelector('.fact-overlay');
-            const factText = factOverlay.querySelector('.fact-text');
-
-            // Set initial fact
-            factText.textContent = getRandomFact();
-
-            // Event listener for mouseover (hover)
-            image.addEventListener('mouseover', () => {
-                factText.textContent = getRandomFact();
-            });
-
-            // Event listener for mouseout (hover out)
-            image.addEventListener('mouseout', () => {
-                factText.textContent = getRandomFact();
-            });
+        // Event listener for mouseover (hover)
+        image.addEventListener('mouseover', () => {
+            updateFact();
         });
-    </script>
+
+        // Event listener for mouseout (hover out)
+        image.addEventListener('mouseout', () => {
+            updateFact();
+        });
+    });
+</script>
 </body>
 </html>
