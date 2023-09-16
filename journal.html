@@ -11,8 +11,6 @@
         body, html {
             height: 100%;
             margin: 0;
-            display: flex;
-            flex-direction: column;
             background-image: url('https://cdn.wccftech.com/wp-content/uploads/2016/09/spacee-1030x644.jpg'); /* Replace 'your-background-image.jpg' with your image URL */
             background-size: cover;
             background-repeat: no-repeat;
@@ -21,33 +19,32 @@
         /* Styling for the overlay text */
         #overlay-text {
             text-align: center;
-            font-size: 36px; /* Adjust the font size as needed */
-            color: white; /* Text color */
-            margin-top: 20px; /* Add top margin for spacing */
+            font-size: 50px;
+            color: white; 
+            margin-top: 30px; 
         }
 
         /* Create a container for the editor and notes */
         #content-container {
             display: flex;
             justify-content: space-between; /* Arrange editor and notes side by side */
-            margin: 20px; /* Add margin for spacing */
+            margin: 40px; /* Add margin for spacing */
         }
 
         /* Styling for the editor container */
         #editor-container {
-            flex: 1; /* Take up available space */
-            background-color: white; /* Editor background color */
-            padding: 20px; /* Add padding for spacing */
+            background-color: rgba(255, 255, 255, 0.8); /* Editor background color */
+            padding: 30px; /* Add padding for spacing */
         }
 
         /* Styling for the toolbar */
         .ql-toolbar {
-            background-color: white; /* Toolbar background color */
+            background-color: rgba(255, 255, 255, 0.8); /* Toolbar background color */
         }
 
         /* Styling for the save button */
         #save-button {
-            margin-top: 20px; /* Add top margin for spacing */
+            margin-top: 10px; 
             padding: 10px 20px; /* Adjust padding as needed */
             background-color: white; /* Button background color */
             color: black; /* Button text color */
@@ -102,7 +99,7 @@
             theme: 'snow', // 'snow' is a simple theme with basic formatting options
             modules: {
                 toolbar: [
-                    [{ 'font': ['Arial', 'Times New Roman', 'Courier New'] }],
+                    [{ 'font': [] }],
                     [{ 'size': ['small', false, 'large', 'huge'] }],
                     ['bold', 'italic'],
                     [{ 'color': [] }],
