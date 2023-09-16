@@ -11,19 +11,19 @@ The main page of our website is minimalistic and designed to allow you to explor
 
 1. **Mindfulness Journal:** Users can maintain a personal mindfulness journal where they can record their thoughts, feelings, and experiences, which they can then 'send to the moon'
 
-![affirmations](https://github.com/guptajanavi/cosmos-cares/assets/79553848/77748f6c-beb5-4956-a841-5be235fcc83f)
+![journal](https://github.com/guptajanavi/cosmos-cares/assets/79553848/dca1eaf2-77fe-42fc-a68f-f4fd357b7e64)
 
 2. **Trivia:** The website provides interesting and educational space-related facts to stimulate curiosity and learning.
  
-![meditation](https://github.com/guptajanavi/cosmos-cares/assets/79553848/88cdf3f1-78fe-4b64-a8ef-630feaf2a566)
+![trivia](https://github.com/guptajanavi/cosmos-cares/assets/79553848/192271f2-8fed-4466-af1e-658e1dc12b56)
 
 3. **Meditation:** Cosmos Cares offers links to mediation, stretches, calming lo-fi music, etc.
 
-![trivia](https://github.com/guptajanavi/cosmos-cares/assets/79553848/192271f2-8fed-4466-af1e-658e1dc12b56)
+![meditation](https://github.com/guptajanavi/cosmos-cares/assets/79553848/88cdf3f1-78fe-4b64-a8ef-630feaf2a566)
 
 4. **Affirmations:** Users can access a collection of positive affirmations to boost their self-esteem!
 
-![journal](https://github.com/guptajanavi/cosmos-cares/assets/79553848/dca1eaf2-77fe-42fc-a68f-f4fd357b7e64)
+![affirmations](https://github.com/guptajanavi/cosmos-cares/assets/79553848/77748f6c-beb5-4956-a841-5be235fcc83f)
 
 # How We Built It
 We started off familiarising ourselves with Github to collaborate and Github Pages to generate and deploy the actual website. We mapped out the design of the website and started creating the actual content for the pages. We finally build Cosmos Cares using HTML, CSS, and a bit of JavaScript!
