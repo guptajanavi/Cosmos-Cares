@@ -5,117 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Station</title>
     <style>
-         /* Background image styling */
-         body, html {
+        /* Background image styling */
+        body, html {
             height: 100%;
             margin: 0;
-            background-image: url('https://www.travelandleisure.com/thmb/NOzP4KKGmbw_Tp_9wywHcdvSDJ0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/spaceship-neptune-interior-cosy-lounge-SPACELOUNGE0422-29e902cc3a0842d68ea4c8a769086903.jpg'); /* Replace 'your-background-image.jpg' with your image URL */
+            background-image: url('your-background-image.jpg');
             background-size: cover;
-            background-repeat: repeat;
+            background-repeat: no-repeat;
+            background-position: center center;
         }
 
-        /* Styling for the overlay text */
+        /* Flex container for centering content */
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+        }
+
+        /* Common styling for text content */
+        .text-content {
+            color: white;
+            margin: 10px;
+        }
+
         #overlay-text {
-            text-align: center;
             font-size: 50px;
-            color: white; 
-            margin-top: 20px; 
         }
 
-        /* Styling for the name text */
-        #name-text {
-            text-align: center;
-            font-size: 20px;
-            color: white; 
-            margin-top: 200px; 
-        }
-
-        /*Project title */
         #project-title {
-            text-align: center;
             font-size: 40px;
-            color: white; 
-            margin-top: 30px; 
         }
 
-        .back-link-med {
-            position: absolute
-            width: 30px;
-            height: 30px;
-            margin: 10px;
-            margin-top: 10px;
-            margin-left: 800px;
-            font-size: 5px;
+        #name-text {
+            font-size: 20px;
         }
 
-        .back-link-journal {
-            position: absolute
-            width: 30px;
-            height: 30px;
-            margin: 10px;
-            margin-top: 150px;
-            margin-left: 300px;
-            font-size: 5px;
-        }
-
-        .back-link-aff {
-            position: absolute
-            width: 30px;
-            height: 30px;
-            margin: 10px;
-            margin-top: 20px;
-            margin-left: 1000px;
-            font-size: 5px;
-        }
-
-        .back-link-triv {
-            position: absolute
-            width: 30px;
-            height: 30px;
-            margin: 10px;
-            margin-top: 5px;
-            margin-left: 900px;
-            font-size: 5px;
+        /* Flex container for links */
+        .back-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 30px;
         }
 
         .back-link a {
-            color: white; /* Change the text color to white */
-            text-decoration: none; /* Remove underline from the link */
+            color: white;
+            text-decoration: none;
+        }
+        
+        .back-link img {
+            width: 30px;
+            height: 30px;
         }
 
     </style>
 </head>
 <body>
-    <div id="overlay-text"> welcome back to the space station! </div>
-    </div>
+    <div class="flex-container">
+        <div id="overlay-text">welcome back to the space station!</div>
+        <div id="project-title">cosmos cares 🪐</div>
 
-    <div id="project-title"> cosmos cares 🪐 </div>
-    </div>
-
-    <div class="back-link-med">
-        <a href="https://guptajanavi.github.io/cosmos-cares/meditation"><img src="assets/white-sparkle-png-transparent-29 (1).png" alt="white sparkle"></a>
+        <!-- Flex container for the links -->
+        <div class="back-links">
+            <div class="back-link">
+                <a href="https://guptajanavi.github.io/cosmos-cares/meditation"><img src="assets/white-sparkle-png-transparent-29.png" alt="white sparkle"></a>
+            </div>
+            <div class="back-link">
+                <a href="https://guptajanavi.github.io/cosmos-cares/journal"><img src="assets/white-sparkle-png-transparent-29.png" alt="white sparkle"></a>
+            </div>
+            <div class="back-link">
+                <a href="https://guptajanavi.github.io/cosmos-cares/affirmations"><img src="assets/white-sparkle-png-transparent-29.png" alt="white sparkle"></a>
+            </div>
+            <div class="back-link">
+                <a href="https://guptajanavi.github.io/cosmos-cares/trivia"><img src="assets/white-sparkle-png-transparent-29.png" alt="white sparkle"></a>
+            </div>
         </div>
+
+        <div id="name-text">made with 🤍 by Natalie, Janavi and Avantika @ CMU</div>
     </div>
-
-    <div class="back-link-journal">
-        <a href="https://guptajanavi.github.io/cosmos-cares/journal"><img src="assets/white-sparkle-png-transparent-29 (1).png" alt="white sparkle"></a>
-        </div>
-    </div>
-
-    <div class="back-link-aff">
-        <a href="https://guptajanavi.github.io/cosmos-cares/affirmations"><img src="assets/white-sparkle-png-transparent-29 (1).png" alt="white sparkle"></a>
-        </div>
-    </div>
-
-    <div class="back-link-trivia">
-        <a href="https://guptajanavi.github.io/cosmos-cares/trivia"><img src="assets/white-sparkle-png-transparent-29 (1).png" alt="white sparkle"></a>
-        </div>
-    </div>
-
-    <div id= "name-text"> made with 🤍 by natalie, janavi and avantika @ cmu </div>
-    </div>
-
-
-    </script>
 </body>
 </html>
